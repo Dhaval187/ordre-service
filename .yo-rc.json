@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.aspire.blog.order"
+    },
+    "jhipsterVersion": "6.3.1",
+    "applicationType": "microservice",
+    "baseName": "order",
+    "packageName": "com.aspire.blog.order",
+    "packageFolder": "com/aspire/blog/order",
+    "serverPort": "8082",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": "kafka",
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "MGI3ODYwMGFhZThkYWZkZDhmZjczYjFmNGM3NWNjYmQwNjI1YjBlZWVhZGQzNTk4YTZhMzI5ZGY3Mzg1NTk3YjY1MTRmNDlkYTIwODAyNmMyZGMxODY0NGZlYWM3ZWJkZjdjNmY5NzdjYTg3MzU1ZTA5N2I1N2Q2MWU4ZWMxYTc=",
+    "embeddableLaunchScript": false,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
