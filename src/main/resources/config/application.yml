@@ -196,4 +196,8 @@ jhipster:
 # https://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-# application:
+application:
+## File Storage Properties
+# All files uploaded through the REST API will be stored in this directory
+    upload-dir: ../Docs
+    max-file-size: 5242880

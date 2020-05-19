@@ -10,4 +10,23 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @ConfigurationProperties(prefix = "application", ignoreUnknownFields = false)
 public class ApplicationProperties {
+	private String uploadDir;
+
+	private Long maxFileSize;
+
+	public String getUploadDir() {
+		return uploadDir;
+	}
+
+	public void setUploadDir(String uploadDir) {
+		this.uploadDir = uploadDir;
+	}
+
+	public Long getMaxFileSize() {
+		return maxFileSize;
+	}
+
+	public void setMaxFileSize(Long maxFileSize) {
+		this.maxFileSize = maxFileSize;
+	}
 }

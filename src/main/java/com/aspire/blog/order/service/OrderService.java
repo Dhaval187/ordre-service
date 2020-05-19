@@ -2,6 +2,8 @@ package com.aspire.blog.order.service;
 
 import java.util.List;
 
+import org.springframework.core.io.Resource;
+
 import com.aspire.blog.order.service.dto.OrderDTO;
 
 /**
@@ -23,6 +25,13 @@ public interface OrderService {
 	 * @return the list of entities.
 	 */
 	List<OrderDTO> findAll();
+
+	/**
+	 * Export orders
+	 * 
+	 * @param type
+	 */
+	Resource exportAll(String type);
 
 	/**
 	 * Delete order by id
