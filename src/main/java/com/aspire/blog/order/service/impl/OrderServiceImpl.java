@@ -129,7 +129,7 @@ public class OrderServiceImpl implements OrderService {
 			JRSaver.saveObject(jasperReport, "exampleReport.jasper");
 			JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(orderRepository.findAll());
 			Map<String, Object> parameters = new HashMap<>();
-			parameters.put("name", "Dhaval");
+			parameters.put("userName", "Dhaval's Orders");
 			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
 
 			SimpleReportExporter simpleReportExporter = new SimpleReportExporter(jasperPrint);
