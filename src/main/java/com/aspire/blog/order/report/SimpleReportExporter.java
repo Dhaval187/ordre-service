@@ -1,7 +1,5 @@
 package com.aspire.blog.order.report;
 
-import org.slf4j.Logger;
-import org.slf4j.event.Level;
 import org.springframework.stereotype.Component;
 
 import net.sf.jasperreports.engine.JRException;

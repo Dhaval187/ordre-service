@@ -24,7 +24,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ResourceUtils;
 
-import com.aspire.blog.order.config.ApplicationProperties;
 import com.aspire.blog.order.config.Constants;
 import com.aspire.blog.order.domain.Order;
 import com.aspire.blog.order.domain.event.OrderEvent;
@@ -37,12 +36,10 @@ import com.aspire.blog.order.service.mapper.OrderMapper;
 
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
-import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.engine.util.JRSaver;
 
 /**
@@ -135,7 +132,8 @@ public class OrderServiceImpl implements OrderService {
 			SimpleReportExporter simpleReportExporter = new SimpleReportExporter(jasperPrint);
 			String fileName = "";
 			switch (type) {
-			case "PDF":
+			case "PDF": 
+			case "PRINT":
 				fileName = "example.pdf";
 //				JasperExportManager.exportReportToPdfFile(jasperPrint, this.fileStorageLocation + "/example.pdf");
 				simpleReportExporter.exportToPdf(this.fileStorageLocation + "/" + fileName, "DHAVAL");
