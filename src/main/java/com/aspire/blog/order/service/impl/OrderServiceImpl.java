@@ -126,7 +126,7 @@ public class OrderServiceImpl implements OrderService {
 		try {
 			File file = ResourceUtils.getFile("classpath:example.jrxml");
 			JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
-			JRSaver.saveObject(jasperReport, "employeeReport.jasper");
+			JRSaver.saveObject(jasperReport, "exampleReport.jasper");
 			JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(orderRepository.findAll());
 			Map<String, Object> parameters = new HashMap<>();
 			parameters.put("name", "Dhaval");
