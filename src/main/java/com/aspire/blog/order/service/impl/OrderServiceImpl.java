@@ -42,6 +42,8 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.engine.util.JRSaver;
 
 /**
  * Service Implementation for managing {@link Order}.
@@ -124,6 +126,7 @@ public class OrderServiceImpl implements OrderService {
 		try {
 			File file = ResourceUtils.getFile("classpath:example.jrxml");
 			JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
+			JRSaver.saveObject(jasperReport, "employeeReport.jasper");
 			JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(orderRepository.findAll());
 			Map<String, Object> parameters = new HashMap<>();
 			parameters.put("name", "Dhaval");
@@ -135,15 +138,15 @@ public class OrderServiceImpl implements OrderService {
 			case "PDF":
 				fileName = "example.pdf";
 //				JasperExportManager.exportReportToPdfFile(jasperPrint, this.fileStorageLocation + "/example.pdf");
-				simpleReportExporter.exportToPdf(this.fileStorageLocation + "/example.pdf", "DHAVAL");
+				simpleReportExporter.exportToPdf(this.fileStorageLocation + "/" + fileName, "DHAVAL");
 				break;
 			case "XLSX":
 				fileName = "Example.xlsx";
-				simpleReportExporter.exportToXlsx(this.fileStorageLocation + "/Example.xlsx", "Example");
+				simpleReportExporter.exportToXlsx(this.fileStorageLocation + "/" + fileName, "Example");
 				break;
 			case "CSV":
 				fileName = "example.csv";
-				simpleReportExporter.exportToCsv(this.fileStorageLocation + "/example.csv");
+				simpleReportExporter.exportToCsv(this.fileStorageLocation + "/" + fileName);
 				break;
 			default:
 				break;

@@ -152,7 +152,7 @@ public class OrderResource {
 		return ResponseEntity.ok().contentType(MediaType.parseMediaType(contentType))
 				.contentLength(resource.getFile().length())
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + resource.getFilename())
-				.headers(HeaderUtil.createEntityUpdateAlert(applicationName, true, ENTITY_NAME, resource.toString()))
+				.headers(HeaderUtil.createAlert(applicationName, "Orders exported successfully", resource.toString()))
 				.body(resource);
 	}
 
